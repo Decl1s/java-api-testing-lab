@@ -1,5 +1,7 @@
 # Java API Testing Lab
 
+[![Java API checks](https://github.com/Decl1s/java-api-testing-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/Decl1s/java-api-testing-lab/actions/workflows/tests.yml)
+
 Учебный проект по автоматизированному тестированию REST API на Java. Предметная область — постановка файлов в очередь обработки. Стенд не сканирует файлы: принимает только метаданные и хранит задания в памяти.
 
 ## Что проверяется
@@ -36,10 +38,14 @@ mvn -DdemoBug=true test
 
 ## Ограничения
 
-Статический ключ для локальной демонстрации. Нет реального сканирования, БД, очереди, параллельной обработки и нагрузочных проверок. Повторный POST создаёт новое задание; идемпотентность создания не заявлена. Валидация неизвестных дополнительных полей не заявлена. GitHub Actions будет проверен после публикации.
+Статический ключ для локальной демонстрации. Нет реального сканирования, БД, очереди, параллельной обработки и нагрузочных проверок. Повторный POST создаёт новое задание; идемпотентность создания не заявлена. Валидация неизвестных дополнительных полей не заявлена. GitHub Actions: первый запуск прошёл успешно 6 октября 2026. [Отчёт CI](https://github.com/Decl1s/java-api-testing-lab/actions/runs/37438308968).
 
 Проект подготовлен с помощью AI. Для обсуждения на собеседовании нужно понимать клиент, проверки, фикстуру и требования; генерация проекта сама по себе не означает владение стеком.
 
 ## Документация инструментов
 
 [JUnit 5](https://junit.org/junit5/docs/5.10.5/user-guide/) · [Java HTTP Client](https://docs.oracle.com/en/java/javase/17/docs/api/java.net.http/java/net/http/HttpClient.html) · [GitHub Actions для Maven](https://docs.github.com/en/actions/tutorials/build-and-test-code/java-with-maven)
+
+
+
+[QA-кейс и SQL-практика](https://github.com/Decl1s/support-qa-case-study) · [Разбор кода для собеседования](docs/explain-the-code.md)

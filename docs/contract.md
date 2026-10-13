@@ -2,9 +2,9 @@
 
 Все запросы требуют `X-Api-Key: demo-token`. Неверный или отсутствующий ключ: 401 и `error: unauthorized`.
 
-POST /jobs: Content-Type application/json, тело `{ "filename": "sample.pdf", "sizeKb": 12 }`.
+POST /jobs: Content-Type application/json (включая параметр charset=utf-8; регистр имени типа не важен), тело `{ "filename": "sample.pdf", "sizeKb": 12 }`.
 
-Требования: filename — непустая строка, не состоящая только из пробелов, длина 1–255 Java char; sizeKb — целое число 1–4096 включительно. Ошибка полей: 422, validation_error. Синтаксическая ошибка JSON, пустое тело или корень не объект: 400, invalid_json. Тип содержимого не JSON: 415, unsupported_media_type. Тело свыше 8192 байт: 413, body_too_large. Проверка ключа выполняется раньше проверки тела.
+Требования: filename — непустая строка, не состоящая только из пробелов, длина 1–255 Java char; sizeKb — целое число 1–4096 включительно. Ошибка полей: 422, validation_error. Синтаксическая ошибка JSON, пустое тело или корень не объект: 400, invalid_json. Отсутствующий Content-Type или тип содержимого не JSON: 415, unsupported_media_type. Тело свыше 8192 байт: 413, body_too_large. Проверка ключа выполняется раньше проверки тела.
 
 Успех: 201, JSON с id, filename, sizeKb, status=QUEUED; заголовок Location: /jobs/{id}. Каждый успешный запрос создаёт отдельный id.
 

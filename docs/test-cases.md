@@ -18,5 +18,6 @@
 | TC-14 | Создать и прочитать отчёт.pdf / Заявка №42.txt | 201 → 200, имя сохранено без искажений; charset=utf-8 | preservesCyrillicFilename |
 | TC-15 | JSON с charset=utf-8; регистр Application/JSON | 201 → 200, поля сохранены | acceptsJsonWithCharset |
 | TC-16 | Корректный JSON без Content-Type | 415 unsupported_media_type; задание не создано; следующий корректный POST работает | rejectsMissingContentType |
+| TC-17 | GET и POST: /missing, /jobs/, нечисловой/отрицательный/переполненный id, лишний сегмент после cancel | 404 not_found в JSON; существующее задание не меняется | rejectsUnknownRoutesWithoutChangingJob |
 
-Известные непокрытые варианты: переполнение long в sizeKb, неизвестные маршруты, край тела ровно 8192 байта. Они не включены в заявление о покрытии.
+Известные непокрытые варианты: переполнение long в sizeKb, край тела ровно 8192 байта. Они не включены в заявление о покрытии.

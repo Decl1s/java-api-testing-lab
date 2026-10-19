@@ -20,5 +20,6 @@
 | TC-16 | Корректный JSON без Content-Type | 415 unsupported_media_type; задание не создано; следующий корректный POST работает | rejectsMissingContentType |
 | TC-17 | GET и POST: /missing, /jobs/, нечисловой/отрицательный/переполненный id, лишний сегмент после cancel | 404 not_found в JSON; существующее задание не меняется | rejectsUnknownRoutesWithoutChangingJob |
 | TC-18 | Корректный JSON с кириллицей, дополненный пробелами до 8191/8192/8193 байт UTF-8 | 201/201/413 body_too_large; при отказе задание не создаётся | enforcesBodyLimitInBytes |
+| TC-19 | sizeKb: Long.MAX_VALUE, MAX+1, 2^64+1, Long.MIN_VALUE, MIN−1 (числа в JSON) | 422 validation_error; задание не создаётся; следующий корректный запрос работает | rejectsSizesAtLongBoundaries |
 
-Известные непокрытые варианты: переполнение long в sizeKb. Они не включены в заявление о покрытии.
+Начальный список пробелов в покрытии закрыт. Это не означает полное покрытие API: например, параллельная отмена и поведение при перезапуске отдельно не проверялись.

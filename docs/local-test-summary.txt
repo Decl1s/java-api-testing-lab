@@ -1,4 +1,13 @@
--------------------------------------------------------------------------------
-Test set: portfolio.qa.JobsApiTest
--------------------------------------------------------------------------------
-Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.532 s -- in portfolio.qa.JobsApiTest
+Local validation: 2026-10-25, source e80cef8637099a725b7d636c643863d13d1a83ad
+Java 17; Maven offline; normal mode
+portfolio.qa.ContentTypeTest: tests=3, failures=0, errors=0, skipped=0
+portfolio.qa.FilenameEncodingTest: tests=2, failures=0, errors=0, skipped=0
+portfolio.qa.JobsApiTest: tests=32, failures=0, errors=0, skipped=0
+portfolio.qa.RequestBodyLimitTest: tests=3, failures=0, errors=0, skipped=0
+portfolio.qa.SizeLongBoundaryTest: tests=5, failures=0, errors=0, skipped=0
+portfolio.qa.UnknownRoutesTest: tests=6, failures=0, errors=0, skipped=0
+Total: tests=51, failures=0, errors=0, skipped=0
+
+Demo mode: tests=51, failures=2, errors=0, skipped=0
+Expected failures: JobsApiTest.invalidSize, sizeKb=4097 and 2147483647; expected 422, actual 201.
+Normal mode rerun after demo: BUILD SUCCESS.

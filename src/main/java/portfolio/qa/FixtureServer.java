@@ -1,5 +1,6 @@
 package portfolio.qa;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;
@@ -13,7 +14,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /** A deterministic test fixture. Does not scan files or emulate an AV SOFT product. */
 public final class FixtureServer implements AutoCloseable {
-    private final ObjectMapper json = new ObjectMapper();
+    private final ObjectMapper json = new ObjectMapper()
+            .enable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS);
     private final Map<Integer, Job> jobs = new ConcurrentHashMap<>();
     private final AtomicInteger sequence = new AtomicInteger();
     private final HttpServer server;

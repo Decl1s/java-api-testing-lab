@@ -1,5 +1,9 @@
 # Java API Testing Lab
 
+[← Каталог моих проектов](https://github.com/Decl1s/Decl1s/blob/main/PROJECTS.md) · [С чего я начинаю](docs/explain-the-code.md) · [Контракт и решения](docs/test-plan.md) · [Что я проверил](docs/test-results.md)
+
+Я разбираю запрос возврата, затем проверяю обычный режим и контролируемую ошибку через Maven.
+
 [![Java API checks](https://github.com/Decl1s/java-api-testing-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/Decl1s/java-api-testing-lab/actions/workflows/tests.yml)
 
 Я разработал учебный проект по автоматизированному тестированию REST API на Java. Предметная область — постановка файлов в очередь обработки. Стенд не сканирует файлы: принимает только метаданные и хранит задания в памяти.
